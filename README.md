@@ -53,7 +53,7 @@ Description: Type a short, descriptive phrase.
 ```
 $ osm ns-create --ns_name renes1 --nsd_name renes --vim_account dummy_vim
 ```
-You can check the instantiation status with the `$ watch osm ns-list command`. If an error appears (likely), delete the instantiation from the GUI (menu _Instances_ -> _NS Instances_) and repeat the instantiation command. This time it should complete successfully.
+You can check the instantiation status with `watch osm ns-list`. If an error appears during the instantiation (likely), delete it from the GUI (menu _Instances_ -> _NS Instances_) and repeat the instantiation command. This time it should complete successfully.
 
 8. After the instantiation, configure the NS. On _RDSV-OSM_, open a terminal and execute the following commands.
 ```
