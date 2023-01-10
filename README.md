@@ -46,3 +46,25 @@ Type: Helm Chart
 URL: https://martinezgarciadavid.github.io/nfv-lab-cds
 Description: Type a short, descriptive phrase.
 ```
+
+6. On _RDSV-OSM_, onboard the VNF and NS descriptors using the same GUI: navigate to _Packages_ -> _VNF Packages_ and _Packages_ -> _NS Packages_.
+
+7. Once the onboarding has completed, open a terminal in _RDSV-OSM_ and instantiate a network service with the following command:
+```
+$ osm ns-create --ns_name renes1 --nsd_name renes --vim_account dummy_vim
+```
+You can check the instantiation status with the `$ watch osm ns-list command`. If an error appears (likely), delete the instantiation from the GUI (menu _Instances_ -> _NS Instances_) and repeat the instantiation command. This time it should complete successfully.
+
+8. After the instantiation, configure the NS. On _RDSV-OSM_, open a terminal and execute the following commands.
+```
+$ cd Desktop/
+$ cd nfv-lab-cds/
+$ export OSMNS=7b2950d8-f92b-4041-9a55-8d1837ad7b0a
+$ ./osm_renes1.sh
+```
+
+9. Go to _RDSV-K8S_ and, with _kubectl_, execute the _bash_ command on the _kafka_ pod to open a console. Then, use the `kafka-console-consumer.sh` script to print all the messages written to the `CDS` topic. You can open the XFCE console of _h11_ and generate some network traffic. After several seconds, you should be able to see some messages. You can also inject a sample _PCAP_ file with checked cryptojacking traffic. To inject this _PCAP_, on _RDSV-OSM_ execute the following command:
+```
+$ ./softflowd_inject_pcap.sh
+```
+If you open the _Kafka_ console you should be able to see more messages.
