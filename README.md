@@ -39,7 +39,7 @@ $ cd ../netflow-full-pipeline/
 $ helm install -f values.yaml netflow-full-pipeline .
 ```
 
-5. On _RDSV-OSM_, add this _Helm_ chart repository to OSM. To do so, open _Mozilla Firefox_ on this machine, open http://localhost and login to the OSM GUI with the following credentials (admin/admin). Once logged in, navigate to the menu on the left-side of the interface and go to _K8s_ -> _K8s Repos_. Then, click on the button _Add K8s repository_ and fill in the form with the following information:
+5. On _RDSV-OSM_, add this _Helm_ chart repository to OSM. To do so, open _Mozilla Firefox_ on this machine, open http://localhost and login to the OSM GUI with the following credentials: admin/admin (they are already configured and saved by default). Once logged in, navigate to the menu on the left-side of the interface and go to _K8s_ -> _K8s Repos_. Then, click on the button _Add K8s repository_ and fill in the form with the following information:
 ```
 Name: helmchartrepo
 Type: Helm Chart
