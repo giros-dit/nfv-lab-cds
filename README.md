@@ -1,7 +1,7 @@
 # nfv-lab-cds
 Helm repository based on a [NFV laboratory practice](https://github.com/educaredes/nfv-lab) with [SDA+CDS](https://github.com/giros-dit/semantic-data-aggregator) integration, for demostrative purposes.
 
-![nfv-lab-cds](https://github.com/martinezgarciadavid/nfv-lab-cds/blob/main/nfv-lab-cds.drawio.png)
+![nfv-lab-cds](docs/img/nfv-lab-cds.drawio.png)
 
 ## Quick deployment and testing guide
 

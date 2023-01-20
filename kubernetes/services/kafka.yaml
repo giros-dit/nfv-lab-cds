@@ -31,7 +31,7 @@ spec:
         - name: KAFKA_BROKER_ID
           value: "0"
         - name: KAFKA_CREATE_TOPICS
-          value: "flows:1:1,uni-flows:1:1,bidi-flows:1:1,netflow-aggregated:1:1,CDS:1:1"
+          value: "sda-flows:1:1,sda-uni-flows:1:1,sda-bidi-flows:1:1,sda-netflow-aggregated:1:1,sda-netflow-cds:1:1,sda-netflow-dcp:1:1"
 ---
 apiVersion: v1
 kind: Service
