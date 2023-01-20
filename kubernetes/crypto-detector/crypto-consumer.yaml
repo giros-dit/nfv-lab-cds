@@ -15,7 +15,6 @@ spec:
       containers:
       - name: crypto-consumer-service
         image: localhost:32000/crypto-consumer:latest
-        imagePullPolicy: Never
         ports:
         - containerPort: 12002
         args: ["-b", "kafka-service:9092", "-c", "sda-netflow-cds"]

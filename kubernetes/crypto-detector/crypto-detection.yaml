@@ -15,7 +15,6 @@ spec:
       containers:
       - name: crypto-detector-service
         image: localhost:32000/crypto-detector:latest
-        imagePullPolicy: Never
         ports:
         - containerPort: 12000
         args: ["-b", "kafka-service:9092", "-c", "sda-netflow-dcp", "-p", "sda-netflow-cds"]

@@ -15,7 +15,6 @@ spec:
       containers:
       - name: crypto-producer-service
         image: localhost:32000/crypto-producer:latest
-        imagePullPolicy: Never
         ports:
         - containerPort: 12001
         args: ["-b", "kafka-service:9092", "-p", "sda-netflow-dcp", "-t", "1"]
