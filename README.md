@@ -58,12 +58,12 @@ You can check the instantiation status with `watch osm ns-list`. If an error app
 8. After the instantiation, configure the NS. On _RDSV-OSM_, open a terminal and execute the following commands.
 ```
 $ cd Desktop/
-$ cd nfv-lab-cds/
+$ cd nfv-lab-cds/scripts/
 $ export OSMNS=7b2950d8-f92b-4041-9a55-8d1837ad7b0a
 $ ./osm_renes1.sh
 ```
 
-9. Go to _RDSV-K8S_ and, with _kubectl_, execute the _bash_ command on the _kafka_ pod to open a console. Then, use the `kafka-console-consumer.sh` script to print all the messages written to the `CDS` topic. You can open the XFCE console of _h11_ and generate some network traffic. After several seconds, you should be able to see some messages. You can also inject a sample _PCAP_ file with checked cryptojacking traffic. To inject this _PCAP_, on _RDSV-OSM_ execute the following command:
+9. Go to _RDSV-K8S_ and, with _kubectl_, execute the _bash_ command on the _kafka_ pod to open a console. Then, use the `kafka-console-consumer.sh` script to print all the messages written to the `sda-netflow-cds` topic. You can open the XFCE console of _h11_ and generate some network traffic. After several seconds, you should be able to see some messages. You can also inject a sample _PCAP_ file with cryptomining traffic. To inject this _PCAP_, on _RDSV-OSM_ execute the following command:
 ```
 $ ./softflowd_inject_pcap.sh
 ```
