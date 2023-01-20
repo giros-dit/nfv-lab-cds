@@ -85,7 +85,7 @@ $CPE_EXEC /usr/bin/vnx_config_nat brint net1
 
 ## 7. En VNF:cpe arrancar softflowd para exportar flujos NetFlow al colector GoFlow2
 echo "## 7. En VNF:cpe arrancar softflowd para exportar flujos NetFlow al colector GoFlow2"
-$CPE_EXEC /usr/sbin/softflowd -d -i brint -v 9 -t maxlife=30s -T ether -n goflow2-1.default.svc.cluster.local:9995 &
+$CPE_EXEC /usr/sbin/softflowd -d -i brint -v 9 -t maxlife=30s -T ether -n goflow2.default.svc.cluster.local:9995 &
 echo "softflowd arrancado en segundo plano a partir de su binario"
 sleep 10
 
