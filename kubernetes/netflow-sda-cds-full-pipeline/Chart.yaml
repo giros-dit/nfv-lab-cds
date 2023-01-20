@@ -14,13 +14,15 @@
 # limitations under the License.
 #
 apiVersion: v2
-name: netflow-full-pipeline
+name: netflow-sda-cds-full-pipeline
 description: A Helm chart to deploy a Netflow full data pipeline related to SDA within PALANTIR
 type: application
-version: 3.3-SNAPSHOT
+version: 1.0-SNAPSHOT
 appVersion: 1.16.0
 maintainers:
   - name: Daniel González Sánchez 
     email: daniel.gonzalez.sanchez@upm.es
   - name: Ignacio Domínguez Martínez-Casanueva
     email: ignacio.dominguezmartinez@telefonica.com
+  - name: David Martínez García
+    email: gi.giros@upm.es
