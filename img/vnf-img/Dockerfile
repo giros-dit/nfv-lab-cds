@@ -24,7 +24,7 @@ RUN apt-get update \
     gcc \
     make \
     perl \
-    libpcap-dev
+    libpcap-dev \
     && apt-get autoremove -y \
     && apt-get autoclean
     
