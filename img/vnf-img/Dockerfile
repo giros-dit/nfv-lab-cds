@@ -1,10 +1,10 @@
 FROM ubuntu:20.04
 
-# variables to automatically configure tzdata
+# Variables to automatically configure tzdata
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Europe/Madrid
 
-# install required packages
+# Install required packages
 RUN apt-get clean
 RUN apt-get update \
     && apt-get dist-upgrade -y \
@@ -32,11 +32,14 @@ RUN apt-get update \
     libpcap-dev \
     && apt-get autoremove -y \
     && apt-get autoclean
-    
+
+# Download, compile and install softflowd from sources (GitHub repository)    
 RUN git clone https://github.com/irino/softflowd.git && cd softflowd && autoreconf -if && ./configure && make && make install
 
+# Directory to store PCAP files to inject
 RUN mkdir -p /usr/local/etc/softflowd/
 
+# Copy configuration files and PCAP file with cryptomining traffic
 COPY vnx_config_nat /usr/bin/
 COPY isc-dhcp-server /etc/default/isc-dhcp-server
 COPY dhcpd.conf /etc/dhcp/dhcpd.conf 
