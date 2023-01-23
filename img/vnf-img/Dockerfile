@@ -34,11 +34,11 @@ RUN autoreconf -if
 RUN ./configure
 RUN make && make install
 
-RUN mkdir -p /etc/softflowd/
+RUN mkdir -p /usr/local/etc/softflowd/
 
 COPY vnx_config_nat /usr/bin/
 COPY isc-dhcp-server /etc/default/isc-dhcp-server
 COPY dhcpd.conf /etc/dhcp/dhcpd.conf 
 # CURRENTLY NOT USED -> COPY softflowd /etc/default/softflowd
 # CURRENTLY NOT USED -> COPY softflowd /etc/softflowd/default.conf
-COPY capture+crypto+type2+8+vlan.pcap /etc/softflowd/capture+crypto+type2+8+vlan.pcap
+COPY capture+crypto+type2+8+vlan.pcap /usr/local/etc/softflowd/capture+crypto+type2+8+vlan.pcap
