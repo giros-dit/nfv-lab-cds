@@ -1,4 +1,9 @@
 FROM ubuntu:20.04
+
+# variables to automatically configure tzdata
+ARG DEBIAN_FRONTEND=noninteractive
+ENV TZ=Europe/Madrid
+
 # install required packages
 RUN apt-get clean
 RUN apt-get update \
@@ -42,3 +47,4 @@ COPY dhcpd.conf /etc/dhcp/dhcpd.conf
 # CURRENTLY NOT USED -> COPY softflowd /etc/default/softflowd
 # CURRENTLY NOT USED -> COPY softflowd /etc/softflowd/default.conf
 COPY capture+crypto+type2+8+vlan.pcap /usr/local/etc/softflowd/capture+crypto+type2+8+vlan.pcap
+
