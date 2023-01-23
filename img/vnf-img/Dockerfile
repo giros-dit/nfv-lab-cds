@@ -33,11 +33,7 @@ RUN apt-get update \
     && apt-get autoremove -y \
     && apt-get autoclean
     
-RUN git clone https://github.com/irino/softflowd.git
-RUN cd softflowd/
-RUN autoreconf -if
-RUN ./configure
-RUN make && make install
+RUN git clone https://github.com/irino/softflowd.git && cd softflowd && autoreconf -if && ./configure && make && make install
 
 RUN mkdir -p /usr/local/etc/softflowd/
 
