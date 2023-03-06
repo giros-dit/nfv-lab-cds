@@ -18,7 +18,7 @@ For the _RDSV-K8S_ machine, install any required software, like _Helm_ or the st
 
 ```
 $ cd Desktop/
-$ git clone https://github.com/martinezgarciadavid/nfv-lab-cds.git
+$ git clone https://github.com/giros-dit/nfv-lab-cds.git
 $ cd nfv-lab-cds/
 ```
 
@@ -43,7 +43,7 @@ $ helm install -f values.yaml netflow-sda-cds-full-pipeline .
 ```
 Name: helmchartrepo
 Type: Helm Chart
-URL: https://martinezgarciadavid.github.io/nfv-lab-cds
+URL: https://giros-dit.github.io/nfv-lab-cds
 Description: Type a short, descriptive phrase.
 ```
 
