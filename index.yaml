@@ -3,23 +3,23 @@ entries:
   accesschart:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-12-29T11:45:18.456255656+01:00"
+    created: "2023-03-28T16:56:31.513878037+02:00"
     description: A Helm chart for Kubernetes
-    digest: ef311895168e163d2043abc7ca10e21c739bc2daa49c7136421764fcc35d48fd
+    digest: d9eef16e2575d48522cfe17dea28a68405b52f8d34ac55914b4fdc5a3327604a
     name: accesschart
     type: application
     urls:
-    - https://martinezgarciadavid.github.io/nfv-lab-cds/accesschart-0.1.0.tgz
+    - https://giros-dit.github.io/nfv-lab-cds/accesschart-0.1.0.tgz
     version: 0.1.0
   cpechart:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-12-29T11:45:18.456475171+01:00"
+    created: "2023-03-28T16:56:31.514080076+02:00"
     description: A Helm chart for Kubernetes
-    digest: 1f6ddbc964a7b0b855fef3e5a470806e94582aeabb49fd4fecb8e0ced8a681e3
+    digest: 5168e251a98f2ce1bbe4351678168810a82a601543dee15647d04595c6b90384
     name: cpechart
     type: application
     urls:
-    - https://martinezgarciadavid.github.io/nfv-lab-cds/cpechart-0.1.0.tgz
+    - https://giros-dit.github.io/nfv-lab-cds/cpechart-0.1.0.tgz
     version: 0.1.0
-generated: "2022-12-29T11:45:18.455928721+01:00"
+generated: "2023-03-28T16:56:31.513573695+02:00"
