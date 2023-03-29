@@ -5,14 +5,20 @@ Helm repository based on a [NFV laboratory practice](https://github.com/educared
 
 ## Quick deployment and testing guide
 
+0. Download _RDSV-K8S_ and _RDSV-OSM_ virtual machines.
+
+You can download them from the following link: http://idefix.dit.upm.es/download/vnx/vm/.
+
 1. Launch _RDSV-K8S_ and _RDSV-OSM_ virtual machines.
 
 **NOTE**: Bear in mind that these virtual machines need more resources than the ones originally defined. A basic recommendation would be to set these machines to use, at least, 8 CPU cores and 12 GB of RAM.
-For the _RDSV-K8S_ machine, install any required software, like _Helm_ or the standalone _kubectl_ util (and point it to the _MicroK8s_ cluster). Also, your Docker daemon must be configured to use a private repository, and this repository must contain all the custom images of the services that will be deployed. The following links give the instructions to accomplish this:
+For the _RDSV-K8S_ machine, install any required software, like _Helm_ or the standalone _kubectl_ util (and point it to the _MicroK8s_ cluster). Also, your Docker daemon must be configured to use a private repository, and this repository must contain all the custom images of the services that will be deployed. The following links give instructions to accomplish this:
 - [Running Flink clusters in application mode on Kubernetes](https://github.com/giros-dit/semantic-data-aggregator/tree/develop/kubernetes/flink-operator).
-- [Dockerfiles of services](https://github.com/giros-dit/semantic-data-aggregator/tree/develop/kubernetes/flink-operator/flink-cluster-templates/netflow).
+- [Dockerfiles of services](https://github.com/giros-dit/nfv-lab-cds/tree/main/docker).
 - [Working with a private Docker registry](https://microk8s.io/docs/registry-private).
-- [Configuring the standalone _kubectl_ tool to point to a _MicroK8s_ cluster](https://microk8s.io/docs/working-with-kubectl).
+- [Configuring the standalone _kubectl_ tool to point to a _MicroK8s_ cluster (you need this to use _Helm_)](https://microk8s.io/docs/working-with-kubectl).
+
+You also need to build the image of the _vAccess_ and _vCPE_ KNFs/VNFs. You can find it [here](https://github.com/giros-dit/nfv-lab-cds/tree/main/img/vnf-img). Before building it, you must download the sample _PCAP_ with cryptomining traffic by executing the _script_ `download_pcap.sh`. After building it, push it to the private _Docker_ repository you enabled before.
 
 2. On both machines open a terminal, clone the repository and change to its directory.
 
@@ -63,7 +69,7 @@ $ export OSMNS=7b2950d8-f92b-4041-9a55-8d1837ad7b0a
 $ ./osm_renes1.sh
 ```
 
-9. Go to _RDSV-K8S_ and, with _kubectl_, execute the _bash_ command on the _kafka_ pod to open a console. Then, use the `kafka-console-consumer.sh` script to print all the messages written to the `sda-netflow-cds` topic. You can open the XFCE console of _h11_ and generate some network traffic. After several seconds, you should be able to see some messages. You can also inject a sample _PCAP_ file with cryptomining traffic. To inject this _PCAP_, on _RDSV-OSM_ execute the following command:
+9. Go to _RDSV-K8S_ and, with _kubectl_, execute the _bash_ command on the _kafka_ pod to open a console. Then, use the `kafka-console-consumer.sh` script to print all the messages written to the `sda-netflow-cds` topic. You can open the XFCE console of _h11_ and generate some network traffic. After several seconds, you should be able to see some messages. You can inject the sample _PCAP_ file with cryptomining traffic. To inject this _PCAP_, on _RDSV-OSM_ execute the following command:
 ```
 $ ./softflowd_inject_pcap.sh
 ```
